@@ -7,7 +7,7 @@ public class Solution {
 		final int maximumLineCount = 6;
 		final int maximumColumnCount = 6;
 		final int maximumLength = 4;
-		
+
 		int[][] values = new int[maximumLineCount][maximumColumnCount];
 		int i, j;
 		Integer maximumSum = null;
@@ -24,7 +24,9 @@ public class Solution {
 				values[i][j++] = Integer.valueOf(number);
 			}
 		}
-		
+
+		input.close();
+
 		i = 0;
 		j = 0;
 
@@ -34,7 +36,7 @@ public class Solution {
 						+ values[i + 2][j + 1] + values[i + 2][j + 2];
 
 				if (maximumSum == null || sum > maximumSum) {
-					maximumSum = sum;				
+					maximumSum = sum;
 				}
 
 				j++;
@@ -45,7 +47,5 @@ public class Solution {
 		}
 
 		System.out.println(maximumSum);
-
-		input.close();
 	}
 }
